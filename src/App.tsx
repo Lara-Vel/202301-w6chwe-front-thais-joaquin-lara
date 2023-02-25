@@ -7,7 +7,7 @@ const App = () => {
       <h1>Hello world</h1>
       <RobotCard
         robot={{
-          id: 0,
+          id: 'id',
           img: 'string',
           name: 'string',
           speed: 0,
