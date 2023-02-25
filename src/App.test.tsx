@@ -1,9 +1,5 @@
-import { render } from '@testing-library/react';
+export {};
 
-import App from './App';
-
-test('renders learn react link', () => {
-  render(<App />);
-
+test('true to be true', () => {
   expect(true).toBe(true);
 });

@@ -2,6 +2,8 @@ import { FC } from 'react';
 import { useAppDispatch, useAppSelector } from '../../App/hooks';
 import { robotSelector } from './robotCardSlice';
 import { toggleEdition } from './robotCardSlice';
+import './RobotCard.css';
+import * as FaSyncAlt from 'react-icons/fa';
 
 interface RobotProps {
   robot: {
@@ -17,7 +19,7 @@ const RobotCard: FC<RobotProps> = ({ robot }) => {
   const { isEditting } = useAppSelector(robotSelector);
   const dispatch = useAppDispatch();
   return (
-    <article>
+    <article className="robot-card__container">
       <h3>{robot.name}</h3>
 
       <img src={robot.img} alt="" />
@@ -65,7 +67,7 @@ const RobotCard: FC<RobotProps> = ({ robot }) => {
             aria-label="Deactivate status"
             onClick={() => dispatch(toggleEdition())}
           >
-            icono change
+            <FaSyncAlt.FaBars />
           </button>
         </form>
       )}

@@ -1,7 +1,7 @@
 import './App.css';
 import RobotCard from './features/robotCard/RobotCard';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <h1>Hello world</h1>
@@ -17,6 +17,6 @@ function App() {
       />
     </div>
   );
-}
+};
 
 export default App;
