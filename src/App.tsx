@@ -8,12 +8,12 @@ const App = () => {
       <Header />
       <RobotCard
         robot={{
-          id: 'id',
-          img: 'string',
           name: 'string',
+          img: 'string',
           speed: 0,
           resistance: 0,
           dateOfCreation: '',
+          id: 'id',
         }}
       />
     </div>

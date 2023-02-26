@@ -2,12 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: url(../public/assets/background.jpg);
 }
 
 body {
   margin: 0;
   font-family: "Titillium Web", sans-serif;
+  background-image: url(/public/assets/robotic-background.jpg);
   object-fit: cover;
   width: 100%;
   height: 100%;
