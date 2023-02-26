@@ -5,7 +5,6 @@ const dbUrl =
 
 export const getAllRobots = async () => {
   const response = await fetch(dbUrl, { method: 'GET' });
-
   const robots: Robot[] = await response.json();
   return robots;
 };
