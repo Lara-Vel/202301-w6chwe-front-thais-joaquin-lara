@@ -1,10 +1,11 @@
 import './App.css';
+import Header from './features/header/Header';
 import RobotCard from './features/robotCard/RobotCard';
 
 const App = () => {
   return (
     <div className="App">
-      <h1>Hello world</h1>
+      <Header />
       <RobotCard
         robot={{
           name: 'string',
