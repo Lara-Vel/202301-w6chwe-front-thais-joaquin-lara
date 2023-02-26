@@ -1,23 +1,19 @@
 import { FC } from 'react';
 import { useAppDispatch, useAppSelector } from '../../App/hooks';
-import { robotSelector } from './robotCardSlice';
+import { Robot, robotSelector } from './robotCardSlice';
 import { toggleEdition } from './robotCardSlice';
 import './RobotCard.css';
 import * as FaSyncAlt from 'react-icons/fa';
+import * as FaRegTrashAlt from 'react-icons/fa';
 
 interface RobotProps {
-  robot: {
-    id: number;
-    img: string;
-    name: string;
-    speed: number;
-    resistance: number;
-    dateOfCreation: string;
-  };
+  robot: Robot;
 }
+
 const RobotCard: FC<RobotProps> = ({ robot }) => {
   const { isEditting } = useAppSelector(robotSelector);
   const dispatch = useAppDispatch();
+
   return (
     <article className="robot-card__container">
       <h3>{robot.name}</h3>
@@ -33,7 +29,7 @@ const RobotCard: FC<RobotProps> = ({ robot }) => {
             aria-label="Activate status"
             onClick={() => dispatch(toggleEdition())}
           >
-            icono change
+            <FaSyncAlt.FaSyncAlt />
           </button>
         </div>
       ) : (
@@ -46,6 +42,7 @@ const RobotCard: FC<RobotProps> = ({ robot }) => {
               name={robot.name}
               max="10"
               min="0"
+              readOnly
             />
           </label>
           <label htmlFor={'robot-resistance'} title="resistance">
@@ -56,23 +53,36 @@ const RobotCard: FC<RobotProps> = ({ robot }) => {
               name={robot.name}
               max="10"
               min="0"
+              readOnly
             />
           </label>
           <label htmlFor={'robot-date'} title="dateOfCreation">
             Date of creation
-            <input type="date" id="robot-date" name={robot.name} value="" />
+            <input
+              type="date"
+              id="robot-date"
+              name={robot.name}
+              value=""
+              readOnly
+            />
           </label>
           <button
             type="submit"
             aria-label="Deactivate status"
             onClick={() => dispatch(toggleEdition())}
           >
-            <FaSyncAlt.FaBars />
+            <FaSyncAlt.FaSyncAlt />
           </button>
         </form>
       )}
       <div>
-        <i>icono delete</i>
+        <button
+          type="submit"
+          aria-label="Deactivate status"
+          onClick={() => dispatch(toggleEdition())}
+        >
+          <FaRegTrashAlt.FaRegTrashAlt />
+        </button>
       </div>
     </article>
   );
