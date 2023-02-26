@@ -1,21 +1,11 @@
 import './App.css';
-import Header from './features/header/Header';
-import RobotCard from './features/robotCard/RobotCard';
+import RobotCardList from './features/RobotCardList/RobotCardList';
 
 const App = () => {
   return (
     <div className="App">
-      <Header />
-      <RobotCard
-        robot={{
-          name: 'string',
-          img: 'string',
-          speed: 0,
-          resistance: 0,
-          dateOfCreation: '',
-          id: 'id',
-        }}
-      />
+      <h1 className="app__title">All your favourite robots in one place!</h1>
+      <RobotCardList />
     </div>
   );
 };
