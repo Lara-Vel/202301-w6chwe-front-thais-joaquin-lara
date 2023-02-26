@@ -7,12 +7,12 @@ const App = () => {
       <h1>Hello world</h1>
       <RobotCard
         robot={{
-          id: 'id',
-          img: 'string',
           name: 'string',
+          img: 'string',
           speed: 0,
           resistance: 0,
           dateOfCreation: '',
+          id: 'id',
         }}
       />
     </div>
