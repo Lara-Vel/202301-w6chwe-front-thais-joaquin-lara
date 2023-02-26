@@ -1,24 +1,19 @@
 import { FC } from 'react';
 import { useAppDispatch, useAppSelector } from '../../App/hooks';
-import { robotSelector } from './robotCardSlice';
+import { Robot, robotSelector } from './robotCardSlice';
 import { toggleEdition } from './robotCardSlice';
 import './RobotCard.css';
 import * as FaSyncAlt from 'react-icons/fa';
 import * as FaRegTrashAlt from 'react-icons/fa';
 
 interface RobotProps {
-  robot: {
-    id: string;
-    img: string;
-    name: string;
-    speed: number;
-    resistance: number;
-    dateOfCreation: string;
-  };
+  robot: Robot;
 }
+
 const RobotCard: FC<RobotProps> = ({ robot }) => {
   const { isEditting } = useAppSelector(robotSelector);
   const dispatch = useAppDispatch();
+
   return (
     <article className="robot-card__container">
       <h3>{robot.name}</h3>
