@@ -1,22 +1,34 @@
-import { FC } from 'react';
-import { Robot } from '../robotCard/robotCardSlice';
-import RobotCard from '../robotCard/RobotCard';
+import RobotCard from '../RobotCard/RobotCard';
+import { useAppDispatch, useAppSelector } from '../../App/hooks';
+import { getRobotsList, robotsListSelector } from './robotCardListSlice';
+import './RobotCardList.css';
+import { useEffect } from 'react';
 
-interface CardListProps {
-  robots: Robot[];
-}
+const RobotCardList = () => {
+  const dispatch = useAppDispatch();
+  const robotsSelector = useAppSelector(robotsListSelector);
+  const { robots } = robotsSelector;
 
-const RobotCardList: FC<CardListProps> = ({ robots }) => {
+  useEffect(() => {
+    dispatch(getRobotsList);
+  }, [dispatch, robots]);
+
   return (
-    <div>
-      <ul className="robots-cards">
+    <section className="robots__container">
+      <button
+        className="robots-container__btn"
+        onClick={() => dispatch(getRobotsList())}
+      >
+        View all robots
+      </button>
+      <ul className="robots-container__list">
         {robots.map((robot) => (
-          <li className="robots-cards" key={robot.id}>
+          <li className="robots-cards" key={`${robot.id}-${robot.name}`}>
             <RobotCard robot={robot} />
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
 
