@@ -1,6 +1,6 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import robotCardSlice from '../features/RobotCard/robotCardSlice';
 import robotCardListSlice from '../features/RobotCardList/robotCardListSlice';
+import robotCardSlice from '../features/RobotCard/robotCardSlice';
 
 export const store = configureStore({
   reducer: {
