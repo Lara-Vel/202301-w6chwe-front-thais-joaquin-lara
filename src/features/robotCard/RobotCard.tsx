@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { useAppDispatch, useAppSelector } from '../../App/hooks';
-import { Robot, robotSelector } from './robotCardSlice';
-import { toggleEdition } from './robotCardSlice';
 import './RobotCard.css';
 import * as FaSyncAlt from 'react-icons/fa';
 import * as FaRegTrashAlt from 'react-icons/fa';
+import { Robot } from '../../types/interfaces';
+import { removeRobot, robotSelector, toggleEdition } from './robotCardSlice';
 
 interface RobotProps {
   robot: Robot;
@@ -21,9 +21,9 @@ const RobotCard: FC<RobotProps> = ({ robot }) => {
       <img src={robot.img} alt="" />
       {!isEditting ? (
         <div>
-          <p>{robot.speed}</p>
-          <p>{robot.resistance}</p>
-          <p>{robot.dateOfCreation}</p>
+          <p>Speed: {robot.speed}</p>
+          <p>Resistance: {robot.resistence}</p>
+          <p>Created: {robot.creationDate}</p>
           <button
             type="button"
             aria-label="Activate status"
@@ -77,9 +77,9 @@ const RobotCard: FC<RobotProps> = ({ robot }) => {
       )}
       <div>
         <button
-          type="submit"
+          type="button"
           aria-label="Deactivate status"
-          onClick={() => dispatch(toggleEdition())}
+          onClick={() => dispatch(removeRobot(`${robot.id}`))}
         >
           <FaRegTrashAlt.FaRegTrashAlt />
         </button>

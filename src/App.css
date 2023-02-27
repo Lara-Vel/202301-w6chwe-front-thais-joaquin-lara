@@ -37,3 +37,11 @@
     transform: translateY(0px);
   }
 }
+
+.app__title {
+  font-family: "Tilt Warp", cursive;
+  color: #eee;
+  font-size: 40px;
+  margin-top: 64px;
+  margin-bottom: 32px;
+}

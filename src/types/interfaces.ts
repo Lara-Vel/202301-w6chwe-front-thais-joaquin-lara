@@ -3,6 +3,6 @@ export interface Robot {
   name: string;
   img: string;
   speed: number;
-  resistance: number;
-  dateOfCreation: string;
+  resistence: number;
+  creationDate: string;
 }

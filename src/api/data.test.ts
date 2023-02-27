@@ -31,8 +31,8 @@ describe('Given an API call', () => {
       name: 'Robot 1',
       img: '',
       speed: 0,
-      resistance: 0,
-      dateOfCreation: '',
+      resistence: 0,
+      creationDate: '',
     };
     await createRobot(newRobot);
     mockRobotsList.push(newRobot);
@@ -45,8 +45,8 @@ describe('Given an API call', () => {
       name: 'Robot 232',
       img: '',
       speed: 0,
-      resistance: 0,
-      dateOfCreation: '',
+      resistence: 0,
+      creationDate: '',
     };
     await updateRobot('robot-1', newRobot);
     expect(mockRobotsList[0].name).toBe('Robot 1');
