@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { deleteRobot } from '../../api/data';
 import { RootState } from '../../App/store';
-import { getRobotsList } from '../RobotCardList/robotCardListSlice';
+import { getRobotsList } from '../robotCardList/robotCardListSlice';
 export interface CardState {
   isEditting: boolean;
   status: 'idle' | 'loading' | 'failed';

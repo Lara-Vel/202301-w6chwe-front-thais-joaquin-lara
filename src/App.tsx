@@ -1,5 +1,5 @@
 import './App.css';
-import RobotCardList from './features/RobotCardList/RobotCardList';
+import RobotCardList from './features/robotCardList/RobotCardList';
 
 const App = () => {
   return (

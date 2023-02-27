@@ -1,4 +1,4 @@
-import RobotCard from '../RobotCard/RobotCard';
+import RobotCard from '../robotCard/RobotCard';
 import { useAppDispatch, useAppSelector } from '../../App/hooks';
 import { getRobotsList, robotsListSelector } from './robotCardListSlice';
 import './RobotCardList.css';
